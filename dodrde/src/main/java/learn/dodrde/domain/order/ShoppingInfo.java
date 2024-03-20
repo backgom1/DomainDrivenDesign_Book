@@ -1,7 +1,17 @@
 package learn.dodrde.domain.order;
 
-public class ShoppingInfo {
+import lombok.Getter;
 
+/**
+ * 배송지 정보 도메인입니다.
+ */
+@Getter
+public class ShoppingInfo {
+    private Receiver receiver;
     private Address address;
-    private String message;
+
+    public ShoppingInfo(Receiver receiver, Address address) {
+        this.receiver = receiver;
+        this.address = address;
+    }
 }
