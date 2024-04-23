@@ -1,18 +1,35 @@
-package learn.dodrde.domain.order;
+package learn.dodrde.domain.order.domain;
+
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * 주문 도메인입니다.
  * 도메인에 기능을 작성할 수 있습니다.
  */
+
+@Entity
+@Table(name="purchase_order")
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Order {
 
+    @EmbeddedId
     private OrderNo id;
+
+    private Orderer orderer;
+
+    @Embedded
     private List<OrderLine> orderLines;
+    @Embedded
     private Money totalAmounts;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "state")
     private OrderState state;
+
+    @Embedded
     private ShoppingInfo shoppingInfo;
 
     public Order(List<OrderLine> orderLines, ShoppingInfo shoppingInfo) {

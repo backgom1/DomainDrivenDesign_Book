@@ -1,5 +1,9 @@
-package learn.dodrde.domain.order;
+package learn.dodrde.domain.order.domain;
 
+import jakarta.persistence.AttributeOverride;
+import jakarta.persistence.AttributeOverrides;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embedded;
 import lombok.Getter;
 
 /**
@@ -7,7 +11,11 @@ import lombok.Getter;
  */
 @Getter
 public class ShoppingInfo {
+
+    @Embedded
     private Receiver receiver;
+
+    @Embedded
     private Address address;
 
     public ShoppingInfo(Receiver receiver, Address address) {

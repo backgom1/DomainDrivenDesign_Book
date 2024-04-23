@@ -1,4 +1,4 @@
-package learn.dodrde.domain.order;
+package learn.dodrde.domain.order.domain;
 
 import lombok.Getter;
 

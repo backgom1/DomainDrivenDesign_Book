@@ -1,6 +1,9 @@
-package learn.dodrde.domain.order;
+package learn.dodrde.domain.order.domain;
 
+import jakarta.persistence.Embeddable;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
  * 주문 라인 도메인입니다.
@@ -9,6 +12,8 @@ import lombok.Getter;
  * 상품(product)을 얼마(price)에 몇개 살지(quantity) 담고있고 그에 따른 가격을 계산합니다.
  */
 @Getter
+@Embeddable
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderLine {
 
     private Product product;

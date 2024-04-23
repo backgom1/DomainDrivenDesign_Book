@@ -1,5 +1,12 @@
-package learn.dodrde.domain.order;
+package learn.dodrde.domain.order.domain;
 
+
+import jakarta.persistence.Embeddable;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@Embeddable
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Address {
     private String city;
     private String street;
